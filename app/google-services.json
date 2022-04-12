@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1004256805543",
+    "project_id": "shopee-93233",
+    "storage_bucket": "shopee-93233.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004256805543:android:38d9038bf947da47a0d182",
+        "android_client_info": {
+          "package_name": "com.sparklead.shopee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004256805543-0f459174vkibjbfvppbb96e7ur1ia8jk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sparklead.shopee",
+            "certificate_hash": "e5981d0453133fe1ed43ab3bfd5f4e116dfb9027"
+          }
+        },
+        {
+          "client_id": "1004256805543-g9rrtfl2c373t2d0tfcuoq1d36goaqtl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx2BxTtU3JFyoYYxPKxTB60TB2-HI8PHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004256805543-g9rrtfl2c373t2d0tfcuoq1d36goaqtl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

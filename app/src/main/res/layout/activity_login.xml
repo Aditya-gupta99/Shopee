@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.LoginActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_header_image"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/auth_header_image_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/plane_background" />
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:layout_marginLeft="90sp"
+            android:layout_marginTop="70sp"
+            android:src="@drawable/icon" />
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_marginLeft="180sp"
+            android:layout_marginTop="60sp"
+            android:textColor="#DF8336"
+            android:textSize="55sp"
+            />
+    </FrameLayout>
+
+    <com.sparklead.shopee.utils.ShopeeTextView
+        android:id="@+id/shopeeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#DF8336"
+        android:textSize="@dimen/title_textSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_header_image"
+        app:layout_constraintVertical_bias="0.04000002" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#DF8336"
+        android:textColorHint="#DF8336"
+        app:boxStrokeColor="#DF8336"
+        app:hintTextColor="#DF8336"
+
+        app:layout_constraintTop_toBottomOf="@+id/shopeeTextView"
+        app:layout_constraintVertical_bias="0.04000002">
+
+        <com.sparklead.shopee.utils.ShopeeEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textSize="16sp"
+            android:imeOptions="actionGo"
+            android:inputType="textEmailAddress"
+            android:textCursorDrawable="@drawable/cursor_color" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_email"
+        app:layout_constraintVertical_bias="0.04000002"
+        android:textColor="#DF8336"
+        android:textColorHint="#DF8336"
+        app:boxStrokeColor="#DF8336"
+        app:hintTextColor="#DF8336">
+
+        <com.sparklead.shopee.utils.ShopeeEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="password"
+            android:imeOptions="actionGo"
+            android:textSize="16sp"
+
+            android:inputType="textPassword"
+            android:textCursorDrawable="@drawable/cursor_color"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.sparklead.shopee.utils.ShopeeTextView
+        android:id="@+id/tv_forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20sp"
+        android:text="Forgot Password?"
+        android:textColor="#DF8336"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_password"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:text="Login"
+        android:background="@drawable/button_background"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:padding="10sp"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_forgot"
+        app:layout_constraintVertical_bias="0.06999999" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Submit"
+        app:layout_constraintVertical_bias="0.100000024">
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5sp"
+            android:text="Don't have an account ?"
+            android:textAlignment="textEnd"
+
+            android:textSize="18sp" />
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:foreground="?attr/selectableItemBackground"
+            android:textStyle="bold"
+            android:textColor="#DF8336"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="160sp"
+        android:layout_marginTop="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/plane_background" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

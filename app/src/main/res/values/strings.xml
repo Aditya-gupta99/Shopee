@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Shopee</string>
+    <string name="term_amp_condition"><![CDATA[Term & Condition]]>.</string>
+
+    <string name="err_msg_first_name">Please enter your first name. </string>
+    <string name="err_msg_last_name">Please enter your last name. </string>
+    <string name="err_msg_email">Please enter your email. </string>
+    <string name="err_msg_password">Please enter password. </string>
+    <string name="err_msg_confirm_password">Please enter confirm password. </string>
+    <string name="err_msg_password_confirm">Password and confirm password not matched.</string>
+    <string name="err_msg_agree">Please agree terms and condition</string>
+    <string name="please_wait">Please Wait&#8230;</string>
+    <string name="forgot_information">Enter your username and e-mail address \n we\'ll send you an email to reset your \n password</string>
+<!--    <string name="title_activity_dashboard">DashboardActivity</string>-->
+    <string name="title_products">Products</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_orders">Orders</string>
+
+    <string name="please_click_back_again_to_exit">Please click back again to exit.</string>
+</resources>

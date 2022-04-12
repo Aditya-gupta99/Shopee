@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.Profile">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#DF8336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:text="Profile"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:background="@drawable/plane_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_profile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="25sp"
+                android:layout_marginBottom="20sp"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="200sp"
+                    android:layout_height="200sp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/profile_img"
+                    android:contentDescription="TODO" />
+            </FrameLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:textColor="#DF8336"
+                android:textColorHint="#DF8336"
+                app:boxStrokeColor="#DF8336"
+
+                app:hintTextColor="#DF8336">
+
+                <com.sparklead.shopee.utils.ShopeeEditText
+                    android:id="@+id/et_first_name_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="20sp"
+                    android:imeOptions="actionGo"
+                    android:inputType="textPersonName"
+                    android:textCursorDrawable="@drawable/cursor_color" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:textColor="#DF8336"
+                android:textColorHint="#DF8336"
+                app:boxStrokeColor="#DF8336"
+                app:hintTextColor="#DF8336">
+
+                <com.sparklead.shopee.utils.ShopeeEditText
+                    android:id="@+id/et_last_name_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="20sp"
+                    android:textSize="16sp"
+                    android:imeOptions="actionGo"
+                    android:inputType="textPersonName"
+                    android:textCursorDrawable="@drawable/cursor_color" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:textColor="#DF8336"
+                android:textColorHint="#DF8336"
+                android:layout_marginBottom="20sp"
+                app:boxStrokeColor="#DF8336"
+                app:hintTextColor="#DF8336">
+
+                <com.sparklead.shopee.utils.ShopeeEditText
+                    android:id="@+id/et_email_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:imeOptions="actionGo"
+                    android:inputType="textEmailAddress"
+                    android:textCursorDrawable="@drawable/cursor_color" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:textColor="#DF8336"
+                android:textColorHint="#DF8336"
+                app:boxStrokeColor="#DF8336"
+                app:hintTextColor="#DF8336">
+
+                <com.sparklead.shopee.utils.ShopeeEditText
+                    android:id="@+id/et_mobile_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile Number"
+                    android:layout_marginBottom="20sp"
+                    android:imeOptions="actionGo"
+                    android:inputType="number"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp">
+
+                <com.sparklead.shopee.utils.ShopeeRadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="0sp"
+                    android:layout_height="40sp"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_gender_tab_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="Male"
+                    android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    />
+
+                <com.sparklead.shopee.utils.ShopeeRadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="0sp"
+                    android:layout_height="40sp"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_gender_tab_selector"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:text="Female"
+                    android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    />
+
+            </RadioGroup>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:textSize="20sp"
+                android:background="@drawable/button_background"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_marginBottom="25sp"
+
+                android:text="Save" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
