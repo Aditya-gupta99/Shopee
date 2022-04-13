@@ -13,7 +13,9 @@
         android:theme="@style/Theme.Shopee">
         <activity
             android:name=".ui.activities.SettingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyNewTheme" />
         <activity
             android:name=".ui.activities.DashboardActivity"
             android:exported="false"

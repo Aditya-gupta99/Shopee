@@ -10,11 +10,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.sparklead.shopee.ui.activities.Constants
-import com.sparklead.shopee.ui.activities.LoginActivity
-import com.sparklead.shopee.ui.activities.Profile
-import com.sparklead.shopee.ui.activities.RegisterActivity
 import com.sparklead.shopee.models.User
+import com.sparklead.shopee.ui.activities.*
 
 class FirestoreClass {
 
@@ -94,6 +91,10 @@ class FirestoreClass {
                         //call a function of base activity for transferring the result to it
                         activity.userLoggedInSuccess(user)
 
+                    }
+                    is SettingActivity ->
+                    {
+                        activity.userDetailsSuccess(user)
                     }
                 }
             }

@@ -36,15 +36,41 @@ class Profile : BaseActivity() , View.OnClickListener {
             mUserDetails = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
         }
 
-        et_first_name_profile.isEnabled = false
         et_first_name_profile.setText(mUserDetails.firstName)
-
-        et_last_name_profile.isEnabled =false
         et_last_name_profile.setText(mUserDetails.lastName)
-
         et_email_profile.isEnabled = false
         et_email_profile.setText(mUserDetails.email)
 
+        if(mUserDetails.profileCompleted==0)
+        {
+            tv_title.text = "Complete Profile"
+            et_first_name_profile.isEnabled = false
+
+            et_last_name_profile.isEnabled =false
+
+
+        }
+        else
+        {
+            tv_title.text = "Edit Profile"
+            GliderLoader(this).loadUserPicture(mUserDetails.image,user_image)
+
+
+
+            if(mUserDetails.mobile !=0L)
+            {
+                et_mobile_no.setText(mUserDetails.mobile.toString())
+            }
+            if(mUserDetails.gender==Constants.MALE)
+            {
+                rb_male.isChecked = true
+            }
+            else
+            {
+                rb_female.isChecked = true
+            }
+
+        }
         user_image.setOnClickListener(this)
         btn_profile.setOnClickListener(this)
     }
@@ -103,6 +129,17 @@ class Profile : BaseActivity() , View.OnClickListener {
     {
         val userHashMap =HashMap<String,Any>()
 
+        val firstName =et_first_name_profile.text.toString().trim{ it <= ' '}
+        if(firstName != mUserDetails.firstName)
+        {
+            userHashMap[Constants.FIRST_NAME]=firstName
+        }
+        val lastName =et_last_name_profile.text.toString().trim{ it <= ' '}
+        if(firstName != mUserDetails.lastName)
+        {
+            userHashMap[Constants.LAST_NAME]=lastName
+        }
+
         val mobileNo = et_mobile_no.text.toString().trim{ it <= ' '}
 
         val gender = if(rb_male.isChecked)
@@ -118,12 +155,17 @@ class Profile : BaseActivity() , View.OnClickListener {
             userHashMap[Constants.IMAGE] = mUserProfileImageURl
         }
 
-        if(mobileNo.isNotEmpty())
+        if(mobileNo.isNotEmpty() && mobileNo!=mUserDetails.mobile.toString())
         {
             userHashMap[Constants.MOBILE] = mobileNo.toLong()
         }
 
-        userHashMap[Constants.GENDER] = gender
+        if(gender.isNotEmpty() && gender!=mUserDetails.gender)
+        {
+            userHashMap[Constants.GENDER] = gender
+        }
+
+
 
         userHashMap[Constants.PROFILE_COMPLETED] = 1
 
@@ -141,11 +183,11 @@ class Profile : BaseActivity() , View.OnClickListener {
         showErrorSnackBar("profile updated successfully",false)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent =Intent(this, MainActivity::class.java)
+            val intent =Intent(this, DashboardActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             finish()
-        }, 400)
+        }, 500)
     }
 
     override fun onRequestPermissionsResult(

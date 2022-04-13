@@ -1,9 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.activities.SettingActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/header_title_setting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auth_header_image_height">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/plane_background" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Settings"
+                    android:textAlignment="center"
+                    android:textColor="#DF8336"
+                    android:textSize="32sp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/user_image_setting"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:layout_below="@+id/header_title_setting"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-75sp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_image_setting1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/profile_img"/>
+
+
+        </FrameLayout>
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_title_setting"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="35sp"
+            android:text="Edit"
+            android:paddingRight="7sp"
+            android:paddingLeft="7sp"
+            android:background="@drawable/item_grey_border_background"
+            android:textColor="#DF8336"
+            android:textSize="24sp" />
+
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_image_setting"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30sp"
+            android:text="Aditya"
+            android:textColor="#605F5F"
+            android:textSize="25sp" />
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3sp"
+            android:text="Male"
+            android:textColor="#A8A5A5"
+            android:textSize="22sp" />
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_gender"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3sp"
+            android:textColor="#A8A5A5"
+            android:textSize="22sp"
+            android:text="adityagupta@gmail.com" />
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_mobile_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3sp"
+            android:text="123456789"
+            android:textColor="#A8A5A5"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_mobile_number"
+            android:layout_margin="16sp"
+            android:background="@drawable/item_grey_border_background"
+            android:foreground="?attr/selectableItemBackground"
+            android:orientation="horizontal"
+            android:padding="18sp">
+            <com.sparklead.shopee.utils.ShopeeTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3sp"
+                android:layout_weight="1"
+                android:text="Addresses"
+                android:textColor="#605F5F"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_address"
+            android:layout_gravity="center"
+            android:layout_margin="20sp"
+            android:background="@drawable/button_background"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="@dimen/btn_padding"
+            android:paddingBottom="@dimen/btn_padding"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/btn_textSize" />
+    </RelativeLayout>
+
+</ScrollView>
