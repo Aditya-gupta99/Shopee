@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shopee">
         <activity
+            android:name=".ui.activities.SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.DashboardActivity"
             android:exported="false"
-            android:label="@string/app_name"
-
-            />
+            android:label="@string/app_name" />
         <activity
             android:name=".ui.activities.Profile"
             android:exported="false"

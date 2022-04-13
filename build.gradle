@@ -8,13 +8,18 @@ buildscript {
         google()  // Google's Maven repository
         jcenter()
         mavenCentral()
-
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://www.jitpack.io' }
     }
     dependencies {
 
         // Add this line
         classpath 'com.google.gms:google-services:4.3.10'
     }
+    ext
+            {
+                nav_version ="2.3.5"
+            }
 }
 plugins {
     id 'com.android.application' version '7.1.3' apply false
@@ -25,8 +30,9 @@ plugins {
 allprojects {
 
     repositories {
-//        google()
-//        jcenter()
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
     }
 }
 

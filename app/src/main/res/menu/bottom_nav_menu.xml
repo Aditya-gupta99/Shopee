@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor = "#CF6161">
 
     <item
         android:id="@+id/navigation_products"
         android:icon="@drawable/ic_vector_products"
+        app:cnb_iconColor ="@color/white"
         android:title="@string/title_products" />
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_vector_dashboard"
+        app:cnb_iconColor ="@color/purple_200"
         android:title="@string/title_dashboard" />
 
     <item
         android:id="@+id/navigation_orders"
-        android:icon="ord"
+        android:icon="@drawable/ic_vector_orders"
+        app:cnb_iconColor ="#9F4670"
         android:title="@string/title_orders" />
 
 </menu>

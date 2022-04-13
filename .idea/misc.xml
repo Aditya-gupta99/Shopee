@@ -9,6 +9,12 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/cursor_color.xml" value="0.236" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/drawable_gender_tab_selector.xml" value="0.24" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/drawable_gender_tab_text_color_selector.xml" value="0.24" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.24" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_dashboard_white_24dp.xml" value="0.24" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.24" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_home_white_24dp.xml" value="0.24" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_store_white_24dp.xml" value="0.24" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_vector_dashboard.xml" value="0.24" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_vector_orders.xml" value="0.24" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/drawable/ic_vector_products.xml" value="0.24" />
@@ -21,8 +27,10 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/layout/dialog_progress.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/layout/layout_main.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shopee/app/src/main/res/menu/dashboard_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

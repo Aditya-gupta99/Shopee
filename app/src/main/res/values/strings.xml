@@ -11,10 +11,11 @@
     <string name="err_msg_agree">Please agree terms and condition</string>
     <string name="please_wait">Please Wait&#8230;</string>
     <string name="forgot_information">Enter your username and e-mail address \n we\'ll send you an email to reset your \n password</string>
-<!--    <string name="title_activity_dashboard">DashboardActivity</string>-->
+    <!--    <string name="title_activity_dashboard">DashboardActivity</string>-->
     <string name="title_products">Products</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_orders">Orders</string>
 
     <string name="please_click_back_again_to_exit">Please click back again to exit.</string>
+    <string name="action_settings">settings</string>
 </resources>
