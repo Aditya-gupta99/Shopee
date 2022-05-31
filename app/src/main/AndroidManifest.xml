@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shopee">
         <activity
+            android:name=".ui.activities.ProductDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyNewTheme1"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.AddProductActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyNewTheme1" />
+        <activity
             android:name=".ui.activities.SettingActivity"
             android:exported="false"
             android:screenOrientation="portrait"
