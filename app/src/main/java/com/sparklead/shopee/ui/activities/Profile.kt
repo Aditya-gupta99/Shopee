@@ -32,7 +32,7 @@ class Profile : BaseActivity() , View.OnClickListener {
 
         if(intent.hasExtra(Constants.EXTRA_USER_DETAILS))
         {
-            //get the user details from intent as parcelableExtra
+            //get the user_id details from intent as parcelableExtra
             mUserDetails = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
         }
 

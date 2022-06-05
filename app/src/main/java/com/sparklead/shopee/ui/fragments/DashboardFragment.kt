@@ -13,6 +13,7 @@ import com.sparklead.shopee.R
 import com.sparklead.shopee.databinding.FragmentDashboardBinding
 import com.sparklead.shopee.firestore.FirestoreClass
 import com.sparklead.shopee.models.Product
+import com.sparklead.shopee.ui.activities.CartListActivity
 import com.sparklead.shopee.ui.activities.DashboardActivity
 import com.sparklead.shopee.ui.activities.SettingActivity
 import com.sparklead.shopee.ui.adapters.DashboardItemsListAdapter
@@ -55,6 +56,10 @@ class DashboardFragment : BaseFragment() {
             R.id.action_settings ->{
                 startActivity(Intent(activity,SettingActivity::class.java))
                 return true
+            }
+            R.id.action_cart->
+            {
+                startActivity(Intent(activity,CartListActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

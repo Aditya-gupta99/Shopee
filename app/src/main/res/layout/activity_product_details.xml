@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/plane_background"
     tools:context=".ui.activities.ProductDetailsActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -141,16 +142,58 @@
 
                 <com.sparklead.shopee.utils.ShopeeTextView
                     android:id="@+id/tv_product_details_available_quantity"
-                    android:layout_width="20sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#AFA8A8"
-                    android:textAlignment="center"
-                    android:textSize="24sp"
                     android:layout_marginStart="20sp"
+                    android:background="@drawable/item_grey_border_background"
+                    android:padding="4sp"
+                    android:paddingStart="16sp"
+                    android:paddingEnd="16sp"
                     android:text="5"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
 
                     />
             </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:text="Add To Cart"
+                android:background="@drawable/button_background"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:padding="5sp"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_product_details_title_quantity"
+                app:layout_constraintVertical_bias="0.06999999" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_go_to_cart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:text="Go To Cart"
+                android:background="@drawable/button_background"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:padding="5sp"
+                android:visibility="gone"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_product_details_title_quantity"
+                app:layout_constraintVertical_bias="0.06999999" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

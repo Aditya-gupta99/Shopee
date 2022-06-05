@@ -5,6 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore
 import android.webkit.MimeTypeMap
+import com.sparklead.shopee.models.CartItem
+import com.sparklead.shopee.models.Product
 
 object Constants {
     const val USERS : String = "users"
@@ -28,11 +30,19 @@ object Constants {
 
     const val USER_ID:String = "user_id"
 
-    const val EXTRA_PRODUCT_ID = "extra_product_id"
+    const val EXTRA_PRODUCT_ID:String = "extra_product_id"
 
+    const val EXTRA_PRODUCT_OWNER_ID :String= "extra_product_owner_id"
+
+    const val DEFAULT_CART_QUANTITY :String= "1"
+
+    const val CART_ITEMS:String = "cart_items"
+
+    const val PRODUCT_ID = "product_id"
 
     const val PRODUCT_IMAGE :String = "product_image"
 
+    const val CART_QUANTITY : String = "cart_quantity"
 
     fun showImageChooser(activity :Activity)
     {

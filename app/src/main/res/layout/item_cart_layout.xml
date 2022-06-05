@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="6sp"
+    android:layout_marginStart="8sp"
+    android:layout_marginEnd="8sp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="10sp">
+
+    <LinearLayout
+        android:id="@+id/ll_cart_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="2sp">
+
+
+        <ImageView
+            android:id="@+id/iv_cart_item_image"
+            android:layout_width="90sp"
+            android:layout_height="90sp"
+            android:background="#918F8F"
+            android:scaleType="fitXY"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_cart_item_details"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="2sp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_cart_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#DF8336"
+            android:textSize="20sp"
+            tools:text="Cart item title"
+            />
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <com.sparklead.shopee.utils.ShopeeTextView
+                android:id="@+id/tv_cart_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:textColor="#7A7777"
+                android:textSize="20sp"
+                tools:text="100" />
+
+            <LinearLayout
+                android:id="@+id/ll_update_cart_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_toEndOf="@+id/tv_cart_item_price"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterButton
+                    android:id="@+id/ib_remove_cart_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginEnd="5sp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="5sp"
+                    android:src="@drawable/ic_remove_circle" />
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:id="@+id/tv_cart_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_grey_border_background"
+                    android:paddingStart="16sp"
+                    android:paddingTop="3sp"
+                    android:paddingEnd="16sp"
+                    android:paddingBottom="3sp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:text="out of stock" />
+
+                <androidx.constraintlayout.utils.widget.ImageFilterButton
+                    android:id="@+id/ib_add_cart_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5sp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="5sp"
+                    android:src="@drawable/ic_add_circle" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/ib_delete_cart_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:padding="5sp"
+        android:src="@drawable/ic_delete"
+        android:foreground="?attr/selectableItemBackground"
+        android:visibility="visible"
+        />
+
+</LinearLayout>

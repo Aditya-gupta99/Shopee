@@ -3,7 +3,6 @@ package com.sparklead.shopee.firestore
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
-import android.hardware.display.DeviceProductInfo
 import android.net.Uri
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,10 +12,10 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.sparklead.shopee.models.CartItem
 import com.sparklead.shopee.models.Product
 import com.sparklead.shopee.models.User
 import com.sparklead.shopee.ui.activities.*
-import com.sparklead.shopee.ui.fragments.BaseFragment
 import com.sparklead.shopee.ui.fragments.DashboardFragment
 import com.sparklead.shopee.ui.fragments.ProductsFragment
 
@@ -44,7 +43,7 @@ class FirestoreClass {
                 activity.hideProgressDialog()
                 Log.e(
                     activity.javaClass.simpleName,
-                    "Error while registering the user.",
+                    "Error while registering the user_id.",
                     e
                 )
             }
@@ -132,7 +131,7 @@ class FirestoreClass {
                     }
                 }
                 Log.e(
-                    activity.javaClass.simpleName,"Error while updating the user details",e
+                    activity.javaClass.simpleName,"Error while updating the user_id details",e
                 )
             }
     }
@@ -253,6 +252,91 @@ class FirestoreClass {
             }
     }
 
+    fun addCartItems(activity: ProductDetailsActivity, addToCart: CartItem)
+    {
+        mFirestore.collection(Constants.CART_ITEMS)
+            .document()
+            .set(addToCart, SetOptions.merge())
+            .addOnCompleteListener {
+                activity.addToCartSuccess()
+            }
+            .addOnFailureListener {
+
+                activity.hideProgressDialog()
+
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while creating the document for cart item. ",it
+                )
+            }
+    }
+
+    fun getCartList(activity: Activity){
+
+        mFirestore.collection(Constants.CART_ITEMS)
+            .whereEqualTo(Constants.USER_ID,getCurrentUserId())
+            .get()
+            .addOnSuccessListener { document->
+                Log.e(activity.javaClass.simpleName,document.documents.toString())
+                val list: ArrayList<CartItem> = ArrayList()
+
+                for(i in document.documents)
+                {
+                    val cartItem = i.toObject(CartItem::class.java)!!
+
+                    cartItem.id = i.id
+                    list.add(cartItem)
+                }
+
+                when(activity){
+                    is CartListActivity->
+                    {
+                       activity.successCartItemList(list)
+                    }
+                }
+            }
+            .addOnFailureListener { e->
+                when(activity)
+                {
+                    is CartListActivity ->
+                    {
+                        activity.hideProgressDialog()
+                    }
+                }
+
+                Log.e(activity.javaClass.simpleName,"Error while getting the cart list items.",e)
+            }
+    }
+
+    fun checkIfItemExistInCart(activity: ProductDetailsActivity, productId: String)
+    {
+        mFirestore.collection(Constants.CART_ITEMS)
+            .whereEqualTo(Constants.USER_ID,getCurrentUserId())
+            .whereEqualTo(Constants.PRODUCT_ID,productId)
+            .get()
+            .addOnSuccessListener{ document->
+                
+                Log.e(activity.javaClass.simpleName,document.documents.toString())
+                if (document.documents.size > 0)
+                {
+                    activity.productExistingInCart()
+                }
+                else
+                {
+                    activity.hideProgressDialog()
+                }
+            }
+            .addOnFailureListener { e->
+                activity.hideProgressDialog()
+                print("Success")
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while checking the existing cart list",
+                    e
+                )
+            }
+    }
+
     fun deleteProduct(fragment:ProductsFragment,productId:String)
     {
         mFirestore.collection(Constants.PRODUCTS)
@@ -267,12 +351,84 @@ class FirestoreClass {
             }
     }
 
+    fun updateMyCart(context: Context,cart_id:String,itemHashMap: HashMap<String,Any>){
+        mFirestore.collection(Constants.CART_ITEMS)
+            .document(cart_id)
+            .update(itemHashMap)
+            .addOnCompleteListener {
+
+                when(context){
+                    is CartListActivity ->{
+                        context.itemUpdateSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener { e->
+                when(context){
+                    is CartListActivity->{
+                        context.hideProgressDialog()
+                    }
+                }
+
+                Log.e(context.javaClass.simpleName,"Error while updating the cart item.",e)
+            }
+    }
+
+    fun removeItemFromCart(context: Context, cartItem:String){
+        mFirestore.collection(Constants.CART_ITEMS)
+            .document(cartItem)
+            .delete()
+            .addOnCompleteListener {
+                when(context){
+                    is CartListActivity ->{
+                        context.itemRemovedSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener { e->
+                when(context){
+                    is CartListActivity ->{
+                        context.hideProgressDialog()
+                    }
+                }
+
+                Log.e(context.javaClass.simpleName,
+                "error while removing the item from the cart list..",e
+                )
+            }
+    }
+
+    fun getAllProductsList(activity: CartListActivity){
+        mFirestore.collection(Constants.PRODUCTS)
+            .get()
+            .addOnSuccessListener{ document->
+                Log.e("Product List",document.documents.toString())
+                val productList:ArrayList<Product> = ArrayList()
+                for(i in document.documents)
+                {
+                    val product = i.toObject(Product::class.java)
+                    product!!.product_id = i.id
+                    productList.add(product)
+                }
+                activity.successProductsListFromFirestore(productList)
+            }
+            .addOnFailureListener { e->
+                activity.hideProgressDialog()
+
+                Log.e(
+                    "Get product list","Error while getting all product list.",
+                    e
+                )
+            }
+    }
+
     fun getDashboardItemsList(fragment: DashboardFragment){
         mFirestore.collection(Constants.PRODUCTS)
             .get()
             .addOnSuccessListener { document->
 
                 val productsList: ArrayList<Product> = ArrayList()
+
                 for (i in document.documents){
                     val product = i.toObject(Product::class.java)
                     product!!.product_id=i.id

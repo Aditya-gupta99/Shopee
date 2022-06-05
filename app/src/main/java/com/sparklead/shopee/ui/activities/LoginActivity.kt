@@ -91,7 +91,7 @@ class LoginActivity : BaseActivity() , View.OnClickListener {
 
                 if(task.isSuccessful)
                 {
-                    //Todo - send user to Main Activity
+                    //Todo - send user_id to Main Activity
                         FirestoreClass().getUserDetails(this)
                         showErrorSnackBar("You are logged in successfully.",false)
 //                    startActivity(Intent(this,MainActivity::class.java))
