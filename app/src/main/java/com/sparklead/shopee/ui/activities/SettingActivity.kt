@@ -21,6 +21,7 @@ class SettingActivity : BaseActivity(), View.OnClickListener {
 
         tv_edit.setOnClickListener(this)
         btn_logout.setOnClickListener(this)
+        ll_address.setOnClickListener(this)
     }
 
     private fun getUserDetails()
@@ -66,6 +67,9 @@ class SettingActivity : BaseActivity(), View.OnClickListener {
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(intent)
                     finish()
+                }
+                R.id.ll_address ->{
+                    startActivity(Intent(this,AddressListActivity::class.java))
                 }
             }
         }

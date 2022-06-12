@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/plane_background"
+    tools:context=".ui.activities.MyOrderDetailsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_my_order_details_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#DF8336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.sparklead.shopee.utils.ShopeeTextView
+            android:id="@+id/tv_title_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="-25sp"
+            android:text="My Order Details"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_my_order_details_activity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.sparklead.shopee.utils.ShopeeTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="16sp"
+                android:paddingTop="2sp"
+                android:paddingBottom="2sp"
+                android:text="Order Details"
+                android:textColor="#DF8336"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingStart="16sp"
+                android:paddingTop="10sp"
+                android:paddingEnd="16sp"
+                android:paddingBottom="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Order ID"
+                        android:textColor="#797979"
+                        android:textSize="18sp" />
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:id="@+id/tv_order_details_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="#797979"
+                        android:textSize="18sp"
+                        tools:text="123456" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Order Date"
+                        android:textColor="#797979"
+                        android:textSize="18sp" />
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:id="@+id/tv_order_details_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="#797979"
+                        android:textSize="18sp"
+                        tools:text="20 Oct 2020" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Order Status "
+                        android:textColor="#797979"
+                        android:textSize="18sp" />
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:id="@+id/tv_order_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pending"
+                        android:textAlignment="center"
+                        android:textColor="#CA4A4A"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.sparklead.shopee.utils.ShopeeTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="16sp"
+                android:paddingTop="2sp"
+                android:paddingBottom="2sp"
+                android:text="Product Items"
+                android:textColor="#DF8336"
+                android:textSize="22sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_my_order_items_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.sparklead.shopee.utils.ShopeeTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="16sp"
+                android:layout_marginBottom="10sp"
+                android:paddingTop="2sp"
+                android:paddingBottom="2sp"
+                android:text="Shipping Address"
+                android:textColor="#DF8336"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingStart="16sp"
+                android:paddingTop="10sp"
+                android:paddingEnd="16sp"
+                android:paddingBottom="10sp">
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:id="@+id/tv_order_address_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2sp"
+                    android:paddingBottom="2sp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Home" />
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:id="@+id/tv_order_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    tools:text="Aditya" />
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:id="@+id/tv_order_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2sp"
+                    android:textColor="#7C7979"
+                    android:textSize="18sp"
+                    tools:text="XYZ" />
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:id="@+id/tv_order_additional_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2sp"
+                    android:textColor="#9E9797"
+                    android:textSize="18sp"
+                    tools:text="XYZ" />
+
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:id="@+id/tv_order_mobile_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2sp"
+                    android:textColor="#959191"
+                    android:textSize="18sp"
+                    tools:text="9936045398" />
+            </LinearLayout>
+
+            <com.sparklead.shopee.utils.ShopeeTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginEnd="16sp"
+                android:layout_marginBottom="10sp"
+                android:paddingTop="2sp"
+                android:paddingBottom="2sp"
+                android:text="Items Receipt"
+                android:textColor="#DF8336"
+                android:textSize="22sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="16sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subtotal"
+                        android:textColor="#797979"
+                        android:textSize="18sp" />
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:id="@+id/tv_order_details_sub_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="#797979"
+                        android:textSize="18sp"
+                        tools:text="$100" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Shipping Charges"
+                        android:textColor="#797979"
+                        android:textSize="18sp" />
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:id="@+id/tv_order_details_shipping_charge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="#797979"
+                        android:textSize="18sp"
+                        tools:text="$10.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total Amount"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <com.sparklead.shopee.utils.ShopeeTextView
+                        android:id="@+id/tv_order_details_total_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        tools:text="$110" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="2sp"
+                android:paddingBottom="2sp">
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    android:layout_weight="1"
+                    android:text="Payment Mode"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <com.sparklead.shopee.utils.ShopeeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16sp"
+                    android:text="Cash On Delivery"
+                    android:textColor="#797979"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

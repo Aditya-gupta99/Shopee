@@ -12,10 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shopee">
         <activity
-            android:name=".ui.activities.CartListActivity"
+            android:name=".ui.activities.MyOrderDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/MyNewTheme1"/>
+        <activity
+            android:name=".ui.activities.CheckoutActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyNewTheme1" />
+        <activity
+            android:name=".ui.activities.AddEditAddressActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyNewTheme1" />
+        <activity
+            android:name=".ui.activities.AddressListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyNewTheme1" />
+        <activity
+            android:name=".ui.activities.CartListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyNewTheme1" />
         <activity
             android:name=".ui.activities.ProductDetailsActivity"
             android:exported="false"

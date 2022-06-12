@@ -1,5 +1,6 @@
 package com.sparklead.shopee.ui.activities
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
@@ -27,6 +28,13 @@ class CartListActivity : BaseActivity() {
         btn_checkout.typeface = typeface
 
         setUpActionBar()
+
+        btn_checkout.setOnClickListener {
+            val intent = Intent(this,AddressListActivity::class.java)
+            intent.putExtra(Constants.EXTRA_SELECT_ADDRESS , true)
+            startActivity(intent)
+        }
+
     }
 
     fun successCartItemList(cartList: ArrayList<CartItem>){
@@ -56,7 +64,7 @@ class CartListActivity : BaseActivity() {
             rv_cart_item_list.layoutManager = LinearLayoutManager(this)
             rv_cart_item_list.setHasFixedSize(true)
 
-            val cartListAdapter = CartItemListAdapter(this,cartList)
+            val cartListAdapter = CartItemListAdapter(this,cartList,true)
             rv_cart_item_list.adapter = cartListAdapter
             var subTotal:Double =0.0
 

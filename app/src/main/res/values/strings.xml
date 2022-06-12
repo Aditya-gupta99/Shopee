@@ -21,9 +21,9 @@
     <string name="action_add_product">Add Product</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    
-    
+
+
     <string name="out_of_stock">Out of stock</string>
-    
+
     <string name="msg_for_available_stock"><![CDATA[<Available stock is %1$s!. You can not add more than stock quantity.]]></string>
 </resources>

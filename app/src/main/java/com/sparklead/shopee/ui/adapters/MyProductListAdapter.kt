@@ -15,8 +15,11 @@ import com.sparklead.shopee.ui.fragments.ProductsFragment
 import com.sparklead.shopee.utils.GliderLoader
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
-open class MyProductListAdapter(private val context: Context, private val list: ArrayList<Product>,
-                                private val fragment :ProductsFragment): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+open class MyProductListAdapter(
+    private val context: Context,
+    private val list: ArrayList<Product>,
+    private val fragment :ProductsFragment
+    ): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MyViewHolder(
@@ -28,7 +31,11 @@ open class MyProductListAdapter(private val context: Context, private val list: 
 
         if(holder is MyViewHolder)
         {
-            GliderLoader(context).loadProductPicture(model.image,holder.itemView.iv_item_image)
+            GliderLoader(context).loadProductPicture(
+                model.image,
+                holder.itemView.iv_item_image
+            )
+
             holder.itemView.tv_item_name.text = model.title
             holder.itemView.tv_item_price.text = "₹ ${model.price}"
 

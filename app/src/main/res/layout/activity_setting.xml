@@ -122,11 +122,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_mobile_number"
-            android:layout_margin="16sp"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="16sp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginBottom="16sp"
             android:background="@drawable/item_grey_border_background"
             android:foreground="?attr/selectableItemBackground"
             android:orientation="horizontal"
             android:padding="18sp">
+
             <com.sparklead.shopee.utils.ShopeeTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -137,9 +141,9 @@
                 android:textSize="20sp" />
 
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
         </LinearLayout>
